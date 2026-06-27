@@ -364,8 +364,7 @@ export default function Home() {
       {/* ── CTA — video city lights bokeh, sin personas ── */}
       <section className={styles.ctaSec} id="contacto">
         <video className={styles.ctaVideo} autoPlay muted loop playsInline>
-          {/* Ciudad de noche con autos y carretera — el que le gustó */}
-          <source src={VIDEO_NOSOTROS} type="video/mp4" />
+          <source src={VIDEO_CTA} type="video/mp4" />
         </video>
         <div className={styles.ctaOverlay} />
         <div className={styles.ctaGlow} />
