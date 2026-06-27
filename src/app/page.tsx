@@ -2,6 +2,11 @@ import ConsentModal from '@/components/ConsentModal';
 import ImageTicker from '@/components/ImageTicker';
 import styles from './page.module.css';
 
+// URLs de video — se reemplazan con Vercel Blob tras ejecutar scripts/upload-videos.mjs
+const VIDEO_HERO     = '/videos/hero.mp4';
+const VIDEO_NOSOTROS = '/videos/nosotros.mp4';
+const VIDEO_CTA      = '/videos/cta.mp4';
+
 export default function Home() {
   return (
     <>
@@ -41,10 +46,10 @@ export default function Home() {
         <video
           className={styles.heroVideo}
           autoPlay muted loop playsInline
-          poster="https://images.pexels.com/videos/4066335/pictures/preview-0.jpg"
+          crossOrigin="anonymous"
+          
         >
-          {/* Autopistas aéreas ciudad de noche, sin personas, 4K */}
-          <source src="https://videos.pexels.com/video-files/4066335/4066335-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+          <source src={VIDEO_HERO} type="video/mp4" />
         </video>
         <div className={styles.heroOverlay} />
         <div className={styles.heroOverlayLeft} />
@@ -288,12 +293,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── NOSOTROS — video bokeh luces de ciudad, sin personas ── */}
+      {/* ── NOSOTROS — ciudad de noche con carretera ── */}
       <section className={styles.teamSec}>
-        <video className={styles.teamVideo} autoPlay muted loop playsInline>
-          {/* Ciudad de noche con autos y carretera — el que le gustó */}
-          <source src="https://videos.pexels.com/video-files/2851693/2851693-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+        <video
+          className={styles.teamVideo}
+          autoPlay muted loop playsInline
+          crossOrigin="anonymous"
+        >
+          <source src={VIDEO_NOSOTROS} type="video/mp4" />
         </video>
+        {/* Fallback imagen si el video no carga */}
+        <div className={styles.teamImgFallback} />
         <div className={styles.teamOverlay} />
         <div className={styles.teamContent}>
           <div className={styles.teamInner}>
@@ -345,7 +355,7 @@ export default function Home() {
       <section className={styles.ctaSec} id="contacto">
         <video className={styles.ctaVideo} autoPlay muted loop playsInline>
           {/* Ciudad de noche con autos y carretera — el que le gustó */}
-          <source src="https://videos.pexels.com/video-files/2851693/2851693-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+          <source src={VIDEO_NOSOTROS} type="video/mp4" />
         </video>
         <div className={styles.ctaOverlay} />
         <div className={styles.ctaGlow} />
