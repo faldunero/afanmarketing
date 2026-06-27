@@ -34,3 +34,7 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
+
+# Videos are tracked (hosted on Vercel CDN)
+!public/videos
+!public/videos/*.mp4

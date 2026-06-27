@@ -332,22 +332,32 @@ export default function Home() {
             crecimiento de manera continua.
           </p>
         </div>
-        {/* Google Partner Badge SVG — colores y forma oficial */}
+        {/* Google Partner Badge — SVG fiel al logo oficial */}
         <div className={styles.gpBadge}>
-          <svg width="180" height="64" viewBox="0 0 180 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Fondo badge */}
-            <rect width="180" height="64" rx="6" fill="white" fillOpacity="0.06"/>
-            {/* Letras Google colores oficiales */}
-            <text fontFamily="Arial,sans-serif" fontWeight="700" fontSize="22" y="28">
-              <tspan fill="#4285F4">G</tspan><tspan fill="#EA4335">o</tspan><tspan fill="#FBBC05">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan>
-            </text>
-            {/* Línea separadora */}
-            <line x1="8" y1="36" x2="172" y2="36" stroke="white" strokeOpacity="0.12" strokeWidth="1"/>
-            {/* Partner text */}
-            <text x="8" y="52" fontFamily="Arial,sans-serif" fontSize="11" fontWeight="600" fill="white" fillOpacity="0.55" letterSpacing="3">PARTNER</text>
-            {/* Estrella partner */}
-            <text x="152" y="52" fontFamily="Arial,sans-serif" fontSize="13" fill="#FBBC05">★</text>
-          </svg>
+          <div className={styles.gpBadgeInner}>
+            {/* G multicolor oficial */}
+            <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Segmento rojo — arriba derecha */}
+              <path d="M36 4C52.569 4 66 15.849 66 30.5H36V36H66C64.196 51.918 51.456 64 36 64C19.431 64 6 51.569 6 36C6 20.431 19.431 4 36 4Z" fill="#EA4335"/>
+              {/* Segmento amarillo — abajo derecha */}
+              <path d="M66 36H36V42H63.5C62.1 50.2 57.1 57.1 50.1 61.4L63.9 70.2C72.1 62.6 77 51.9 77 39.8C77 38.5 76.9 37.3 76.8 36H66Z" fill="#FBBC05"/>
+              {/* Círculo base */}
+              <circle cx="36" cy="36" r="32" fill="none"/>
+              {/* Reconstrucción simplificada del G de Google */}
+              <path d="M68 36C68 53.673 53.673 68 36 68C18.327 68 4 53.673 4 36C4 18.327 18.327 4 36 4C44.284 4 51.82 7.261 57.456 12.544L49.373 20.627C46.134 17.563 41.776 15.636 36 15.636C24.545 15.636 15.273 24.909 15.273 36.364C15.273 47.818 24.545 57.091 36 57.091C45.818 57.091 54 50.545 55.636 41.818H36V30.182H67.636C67.876 32.091 68 34.036 68 36Z" fill="white" fillOpacity="0"/>
+            </svg>
+            {/* G oficial usando path correcto */}
+            <svg width="64" height="64" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              <path fill="none" d="M0 0h48v48H0z"/>
+            </svg>
+            <div className={styles.gpBadgeText}>
+              <span className={styles.gpBadgeLabel}>Google Partner</span>
+            </div>
+          </div>
         </div>
       </div>
 

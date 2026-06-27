@@ -25,12 +25,13 @@
 }
 .heroFallback {
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, #0D1E3D 0%, #1B3460 50%, #0D2240 100%);
+  background: url('https://images.pexels.com/photos/3566187/pexels-photo-3566187.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop') center/cover no-repeat, linear-gradient(135deg, #0D1E3D 0%, #1B3460 50%, #0D2240 100%);
+  filter: brightness(.45) saturate(1.1);
   z-index: 0;
 }
 .heroVideo {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; filter: brightness(.45) saturate(1.1); z-index: 1;
+  object-fit: cover; filter: brightness(.45) saturate(1.1); z-index: 2;
 }
 .heroOverlay {
   position: absolute; inset: 0; z-index: 2;
@@ -152,10 +153,15 @@
 
 /* ── TEAM VIDEO ── */
 .teamSec { position: relative; height: 480px; overflow: hidden; border-top: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06); }
-.teamVideo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.35) saturate(1.1); z-index: 0; }
-.teamOverlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to right, rgba(9,18,50,.88) 0%, rgba(9,18,50,.15) 60%, transparent 100%); }
-.teamContent { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; padding: 0 2.5rem; overflow: hidden; }
-.teamInner { width: 100%; max-width: 500px; flex-shrink: 0; }
+.teamVideo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.38) saturate(1.1); z-index: 1; }
+.teamImgFallback {
+  position: absolute; inset: 0; z-index: 0;
+  background: url('https://images.pexels.com/photos/1486785/pexels-photo-1486785.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&fit=crop') center/cover no-repeat;
+  filter: brightness(.38) saturate(1.1);
+}
+.teamOverlay { position: absolute; inset: 0; z-index: 2; background: linear-gradient(to right, rgba(9,18,50,.92) 0%, rgba(9,18,50,.4) 55%, rgba(9,18,50,.1) 100%); }
+.teamContent { position: absolute; inset: 0; z-index: 3; display: flex; align-items: center; padding: 0 2.5rem; }
+.teamInner { width: 100%; max-width: 520px; flex-shrink: 0; }
 .teamEyebrow { font-size: .62rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 1rem; }
 .teamH { font-family: var(--fd); font-size: clamp(2rem,3.5vw,3rem); font-weight: 800; letter-spacing: -.04em; line-height: 1.05; color: #fff; margin-bottom: 1rem; white-space: nowrap; }
 .teamH em { color: var(--accent2); font-style: italic; }
@@ -166,15 +172,34 @@
 .gpLeft { flex: 1; }
 .gpTitle { font-family: var(--fd); font-size: 1.2rem; font-weight: 800; letter-spacing: -.03em; color: #fff; margin-bottom: .4rem; }
 .gpDesc { font-size: .81rem; color: rgba(255,255,255,.38); line-height: 1.7; max-width: 520px; font-weight: 300; }
-.gpBadge { flex-shrink: 0; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09); padding: 1.25rem 1.75rem; display: flex; align-items: center; gap: 14px; }
-.gpLogo { display: flex; align-items: center; gap: 1px; font-family: Arial, sans-serif; font-size: 1.7rem; font-weight: 700; }
-.gpCert { font-size: .72rem; color: rgba(255,255,255,.55); font-weight: 500; }
-.gpSub { font-size: .6rem; color: rgba(255,255,255,.28); letter-spacing: .07em; text-transform: uppercase; line-height: 1.5; margin-top: .2rem; }
+.gpBadge { flex-shrink: 0; }
+.gpBadgeInner {
+  background: #fff;
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
+  min-width: 140px;
+}
+.gpBadgeText { text-align: center; }
+.gpBadgeLabel {
+  font-family: 'Arial', sans-serif;
+  font-size: .9rem;
+  font-weight: 400;
+  color: #5F6368;
+  letter-spacing: .01em;
+}
 
 /* ── CTA VIDEO ── */
 .ctaSec { position: relative; height: 60vh; min-height: 420px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
 .ctaVideo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.25) saturate(1.2); }
-.ctaOverlay { position: absolute; inset: 0; background: rgba(9,18,50,.72); }
+.ctaImgFallback {
+  position: absolute; inset: 0; z-index: 0;
+  background: url('https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&fit=crop') center/cover no-repeat;
+  filter: brightness(.25) saturate(1.2);
+}
+.ctaOverlay { position: absolute; inset: 0; background: rgba(9,18,50,.72); z-index: 1; }
 .ctaGlow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 500px; height: 300px; background: radial-gradient(ellipse, rgba(31,111,235,.28) 0%, transparent 70%); pointer-events: none; }
 .ctaContent { position: relative; z-index: 2; padding: 2rem; }
 .ctaLine { width: 1px; height: 50px; background: rgba(255,255,255,.1); margin: 0 auto 2rem; }
