@@ -1,0 +1,133 @@
+.section {
+  overflow: hidden;
+  background: var(--navy);
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  position: relative;
+}
+
+/* Fade edges */
+.section::before,
+.section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  z-index: 2;
+  pointer-events: none;
+}
+.section::before {
+  left: 0;
+  background: linear-gradient(to right, var(--navy), transparent);
+}
+.section::after {
+  right: 0;
+  background: linear-gradient(to left, var(--navy), transparent);
+}
+
+.label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+  padding: 0 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.overflow { overflow: hidden; }
+
+/* Tracks */
+.track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  margin-bottom: 1rem;
+}
+.track:hover { animation-play-state: paused !important; }
+
+.trackLeft {
+  animation: tickerLeft 32s linear infinite;
+}
+.trackRight {
+  animation: tickerRight 38s linear infinite;
+}
+
+@keyframes tickerLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes tickerRight {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Card base */
+.card {
+  width: 280px;
+  height: 180px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 20, 50, 0.88) 0%, transparent 55%);
+  z-index: 1;
+}
+.cardInner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.25rem;
+  z-index: 2;
+}
+.industry {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0.3rem;
+}
+.result {
+  font-family: var(--fd);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.label-text,
+.label {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 0.15rem;
+  font-weight: 300;
+}
+
+/* ── Card backgrounds ── */
+.card1 { background: linear-gradient(135deg, #142850 0%, #1a3a70 100%); }
+.card2 { background: linear-gradient(135deg, #0d2240 0%, #1b3870 100%); }
+.card3 { background: linear-gradient(135deg, #0a1830 0%, #142048 100%); }
+.card4 { background: linear-gradient(135deg, #111e3a 0%, #1c3060 100%); }
+.card5 { background: linear-gradient(135deg, #0d1e3d 0%, #1a3266 100%); }
+.card6 { background: linear-gradient(135deg, #0f2040 0%, #1e3870 100%); }
+.card7 { background: linear-gradient(135deg, #101828 0%, #1a2e50 100%); }
+.card8 { background: linear-gradient(135deg, #0d2035 0%, #163060 100%); }
+.card9 { background: linear-gradient(135deg, #0a1728 0%, #152848 100%); }
+.card10 { background: linear-gradient(135deg, #0d1e3d 0%, #1b3060 100%); }
+.card11 { background: linear-gradient(135deg, #111e3c 0%, #1c3268 100%); }
+.card12 { background: linear-gradient(135deg, #0a1728 0%, #153060 100%); }
+.card13 { background: linear-gradient(135deg, #0f1f3d 0%, #1a3268 100%); }
+.card14 { background: linear-gradient(135deg, #0d1e3d 0%, #1b3460 100%); }
+
+/* Accent lines on cards (decorative) */
+.card1::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: rgba(31,111,235,0.4); }
+.card3::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: rgba(59,130,246,0.4); }
+.card5::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: rgba(96,165,250,0.3); }
