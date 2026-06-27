@@ -280,23 +280,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── NOSOTROS — video ciudad de noche sin personas ── */}
+      {/* ── NOSOTROS — video bokeh luces de ciudad, sin personas ── */}
       <section className={styles.teamSec}>
         <video className={styles.teamVideo} autoPlay muted loop playsInline>
-          <source src="https://videos.pexels.com/video-files/5838634/5838634-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/10992365/10992365-uhd_2560_1440_30fps.mp4" type="video/mp4" />
         </video>
         <div className={styles.teamOverlay} />
         <div className={styles.teamContent}>
-          <div className={styles.teamEyebrow}>Nosotros</div>
-          <h2 className={styles.teamH}>
-            Experiencia<br />corporativa <em>real</em>
-          </h2>
-          <p className={styles.teamP}>
-            Somos un equipo de profesionales expertos en el desarrollo y gestión de negocios.
-            Lideramos cada proyecto con foco en la eficiencia y la rentabilidad. Entendemos los
-            desafíos que enfrenta una empresa para cumplir sus metas comerciales.
-          </p>
-          <a href="#contacto" className="btn-primary">Agendar sesión gratuita →</a>
+          <div className={styles.teamInner}>
+            <div className={styles.teamEyebrow}>Nosotros</div>
+            <h2 className={styles.teamH}>
+              Experiencia<br />corporativa <em>real</em>
+            </h2>
+            <p className={styles.teamP}>
+              Somos un equipo de profesionales expertos en el desarrollo y gestión de negocios.
+              Lideramos cada proyecto con foco en la eficiencia y la rentabilidad. Entendemos los
+              desafíos que enfrenta una empresa para cumplir sus metas comerciales.
+            </p>
+            <a href="#contacto" className="btn-primary">Agendar sesión gratuita →</a>
+          </div>
         </div>
       </section>
 

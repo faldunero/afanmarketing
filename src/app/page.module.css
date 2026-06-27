@@ -154,11 +154,12 @@
 .teamSec { position: relative; height: 440px; overflow: hidden; border-top: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06); }
 .teamVideo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.38) saturate(1.1); }
 .teamOverlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(9,18,50,.92) 0%, rgba(9,18,50,.28) 100%); }
-.teamContent { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; padding: 0 2.5rem; max-width: 580px; }
+.teamContent { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; padding: 0 2.5rem; }
+.teamInner { max-width: 520px; }
 .teamEyebrow { font-size: .62rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 1rem; }
 .teamH { font-family: var(--fd); font-size: clamp(2rem,3.5vw,3rem); font-weight: 800; letter-spacing: -.04em; line-height: 1.05; color: #fff; margin-bottom: 1rem; }
 .teamH em { color: var(--accent2); font-style: italic; }
-.teamP { font-size: .85rem; color: rgba(255,255,255,.5); line-height: 1.75; font-weight: 300; margin-bottom: 1.5rem; }
+.teamP { font-size: .85rem; color: rgba(255,255,255,.5); line-height: 1.75; font-weight: 300; margin-bottom: 1.5rem; max-width: 460px; }
 
 /* ── GOOGLE PARTNER ── */
 .gpBand { background: var(--navy); padding: 3rem 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2.5rem; border-bottom: 1px solid rgba(255,255,255,.06); }
