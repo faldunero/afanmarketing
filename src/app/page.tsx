@@ -34,9 +34,9 @@ export default function Home() {
         <video
           className={styles.heroVideo}
           autoPlay muted loop playsInline
-          poster="https://images.pexels.com/videos/3173280/pictures/preview-0.jpg"
+          poster="https://images.pexels.com/videos/3129671/pictures/preview-0.jpg"
         >
-          <source src="https://videos.pexels.com/video-files/3173280/3173280-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4" />
         </video>
         <div className={styles.heroOverlay} />
         <div className={styles.heroOverlayLeft} />
