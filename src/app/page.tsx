@@ -20,12 +20,19 @@ export default function Home() {
             <div className={styles.logoSub}>Marketing Digital</div>
           </div>
         </div>
-        <nav className={styles.navLinks}>
-          <a href="#soluciones">Sistema de ventas</a>
-          <a href="#casos">Casos de éxito</a>
-          <a href="#nosotros">Nosotros</a>
-          <a href="#contacto" className={styles.navCta}>Agendar sesión</a>
+        <nav className={styles.navLinks} id="navLinks">
+          <a href="#soluciones" onClick={() => (document.getElementById('navLinks') as HTMLElement)?.classList.remove(styles.navOpen)}>Sistema de ventas</a>
+          <a href="#casos" onClick={() => (document.getElementById('navLinks') as HTMLElement)?.classList.remove(styles.navOpen)}>Casos de éxito</a>
+          <a href="#nosotros" onClick={() => (document.getElementById('navLinks') as HTMLElement)?.classList.remove(styles.navOpen)}>Nosotros</a>
+          <a href="#contacto" className={styles.navCta} onClick={() => (document.getElementById('navLinks') as HTMLElement)?.classList.remove(styles.navOpen)}>Agendar sesión</a>
         </nav>
+        <button
+          className={styles.hamburger}
+          aria-label="Menú"
+          onClick={() => document.getElementById('navLinks')?.classList.toggle(styles.navOpen)}
+        >
+          <span /><span /><span />
+        </button>
       </nav>
 
       {/* ── HERO — ciudad de noche aérea, sin personas ── */}
@@ -34,10 +41,10 @@ export default function Home() {
         <video
           className={styles.heroVideo}
           autoPlay muted loop playsInline
-          poster="https://images.pexels.com/videos/1409899/pictures/preview-0.jpg"
+          poster="https://images.pexels.com/videos/4066335/pictures/preview-0.jpg"
         >
-          {/* Vista aérea ciudad de noche — sin personas — similar al video nosotros */}
-          <source src="https://videos.pexels.com/video-files/1409899/1409899-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+          {/* Autopistas aéreas ciudad de noche, sin personas, 4K */}
+          <source src="https://videos.pexels.com/video-files/4066335/4066335-uhd_2560_1440_25fps.mp4" type="video/mp4" />
         </video>
         <div className={styles.heroOverlay} />
         <div className={styles.heroOverlayLeft} />
@@ -284,7 +291,8 @@ export default function Home() {
       {/* ── NOSOTROS — video bokeh luces de ciudad, sin personas ── */}
       <section className={styles.teamSec}>
         <video className={styles.teamVideo} autoPlay muted loop playsInline>
-          <source src="https://videos.pexels.com/video-files/10992365/10992365-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+          {/* Ciudad de noche con autos y carretera — el que le gustó */}
+          <source src="https://videos.pexels.com/video-files/2851693/2851693-uhd_2560_1440_30fps.mp4" type="video/mp4" />
         </video>
         <div className={styles.teamOverlay} />
         <div className={styles.teamContent}>
@@ -305,7 +313,7 @@ export default function Home() {
 
       {/* ── GOOGLE PARTNER ── */}
       <div className={styles.gpBand}>
-        <div>
+        <div className={styles.gpLeft}>
           <h3 className={styles.gpTitle}>Somos Google Partner</h3>
           <p className={styles.gpDesc}>
             Nuestra trayectoria y resultados nos han hecho merecedores de esta certificación oficial
@@ -314,26 +322,30 @@ export default function Home() {
             crecimiento de manera continua.
           </p>
         </div>
+        {/* Google Partner Badge SVG — colores y forma oficial */}
         <div className={styles.gpBadge}>
-          <div className={styles.gpLogo}>
-            <span style={{ color: '#4285F4' }}>G</span>
-            <span style={{ color: '#EA4335' }}>o</span>
-            <span style={{ color: '#FBBC05' }}>o</span>
-            <span style={{ color: '#4285F4' }}>g</span>
-            <span style={{ color: '#34A853' }}>l</span>
-            <span style={{ color: '#EA4335' }}>e</span>
-          </div>
-          <div>
-            <div className={styles.gpCert}>Partner Certificado</div>
-            <div className={styles.gpSub}>Rendimiento sobresaliente<br />en cuentas de clientes</div>
-          </div>
+          <svg width="180" height="64" viewBox="0 0 180 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Fondo badge */}
+            <rect width="180" height="64" rx="6" fill="white" fillOpacity="0.06"/>
+            {/* Letras Google colores oficiales */}
+            <text fontFamily="Arial,sans-serif" fontWeight="700" fontSize="22" y="28">
+              <tspan fill="#4285F4">G</tspan><tspan fill="#EA4335">o</tspan><tspan fill="#FBBC05">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan>
+            </text>
+            {/* Línea separadora */}
+            <line x1="8" y1="36" x2="172" y2="36" stroke="white" strokeOpacity="0.12" strokeWidth="1"/>
+            {/* Partner text */}
+            <text x="8" y="52" fontFamily="Arial,sans-serif" fontSize="11" fontWeight="600" fill="white" fillOpacity="0.55" letterSpacing="3">PARTNER</text>
+            {/* Estrella partner */}
+            <text x="152" y="52" fontFamily="Arial,sans-serif" fontSize="13" fill="#FBBC05">★</text>
+          </svg>
         </div>
       </div>
 
       {/* ── CTA — video city lights bokeh, sin personas ── */}
       <section className={styles.ctaSec} id="contacto">
         <video className={styles.ctaVideo} autoPlay muted loop playsInline>
-          <source src="https://videos.pexels.com/video-files/10992365/10992365-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+          {/* Ciudad de noche con autos y carretera — el que le gustó */}
+          <source src="https://videos.pexels.com/video-files/2851693/2851693-uhd_2560_1440_30fps.mp4" type="video/mp4" />
         </video>
         <div className={styles.ctaOverlay} />
         <div className={styles.ctaGlow} />

@@ -163,6 +163,7 @@
 
 /* ── GOOGLE PARTNER ── */
 .gpBand { background: var(--navy); padding: 3rem 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2.5rem; border-bottom: 1px solid rgba(255,255,255,.06); }
+.gpLeft { flex: 1; }
 .gpTitle { font-family: var(--fd); font-size: 1.2rem; font-weight: 800; letter-spacing: -.03em; color: #fff; margin-bottom: .4rem; }
 .gpDesc { font-size: .81rem; color: rgba(255,255,255,.38); line-height: 1.7; max-width: 520px; font-weight: 300; }
 .gpBadge { flex-shrink: 0; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09); padding: 1.25rem 1.75rem; display: flex; align-items: center; gap: 14px; }
@@ -195,3 +196,130 @@
 .footSocial { display: flex; gap: .45rem; }
 .footSocial a { width: 27px; height: 27px; border: 1px solid rgba(255,255,255,.09); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.25); font-size: 11px; font-weight: 700; text-decoration: none; transition: all .15s; }
 .footSocial a:hover { border-color: var(--accent2); color: var(--accent2); }
+
+/* ════════════════════════════════════
+   RESPONSIVE — MOBILE FIRST
+   breakpoint: 768px
+   ════════════════════════════════════ */
+
+/* ── HAMBURGER ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 310;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+@media (max-width: 768px) {
+
+  /* NAV */
+  .nav { padding: 0 1.25rem; }
+  .hamburger { display: flex; }
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    inset: 0;
+    background: rgba(9,18,50,0.98);
+    backdrop-filter: blur(16px);
+    z-index: 305;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .navLinks a {
+    font-size: 1.2rem !important;
+    color: rgba(255,255,255,0.75) !important;
+  }
+  .navCta {
+    font-size: 1rem !important;
+    padding: 0.65rem 1.75rem !important;
+  }
+  .navOpen { display: flex !important; }
+
+  /* HERO */
+  .hero { height: 100svh; min-height: 500px; }
+  .heroContent { padding: 0 1.25rem 3rem; }
+  .heroH1 { font-size: clamp(2.2rem, 10vw, 3.5rem); letter-spacing: -0.035em; }
+  .heroBottom { grid-template-columns: 1fr; gap: 1.5rem; }
+  .heroSub { max-width: 100%; font-size: 0.85rem; }
+  .heroCtas { justify-content: flex-start; flex-wrap: wrap; }
+  .scrollHint { display: none; }
+
+  /* STAT STRIP */
+  .statStrip { grid-template-columns: 1fr 1fr; }
+  .statItem { padding: 1.25rem; border-right: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06); }
+  .statNum { font-size: 1.8rem; }
+
+  /* INDUSTRIAS */
+  .industrias { padding: 3rem 1.25rem; }
+  .indGrid { grid-template-columns: 1fr; gap: 2rem; }
+  .indImgWrap { height: 260px; }
+
+  /* SECTIONS */
+  .si { padding: 3rem 1.25rem; }
+  .twoCol { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+  .shD { font-size: clamp(1.6rem, 6vw, 2rem); }
+  .shDSm { font-size: clamp(1.5rem, 6vw, 1.9rem); }
+
+  /* SOLUTIONS */
+  .solRow { grid-template-columns: 44px 1fr; gap: 1rem; }
+  .solBadge { display: none; }
+  .solN { font-size: 1.8rem; }
+
+  /* CASES */
+  .casesGrid { grid-template-columns: 1fr; gap: 1rem; padding: 0 1.25rem 3rem; }
+  .caseImg { height: 240px; }
+
+  /* METRICS */
+  .metWrap { grid-template-columns: 1fr; }
+  .metLeft { border-right: none; border-bottom: 1px solid var(--line); padding: 2.5rem 1.25rem; }
+  .metRight { grid-template-columns: 1fr 1fr; }
+  .metCell { padding: 1.5rem 1.25rem; }
+  .metNum { font-size: 2rem; }
+
+  /* PROCESS */
+  .procHead { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+  .procRow { grid-template-columns: 40px 1fr; gap: 1rem; }
+  .procDesc { display: none; }
+
+  /* TEAM */
+  .teamSec { height: 380px; }
+  .teamContent { padding: 0 1.25rem; }
+  .teamH { font-size: clamp(1.8rem, 7vw, 2.5rem); white-space: normal; }
+
+  /* GP */
+  .gpBand { flex-direction: column; align-items: flex-start; padding: 2rem 1.25rem; gap: 1.5rem; }
+  .gpLeft { width: 100%; }
+  .gpBadge { align-self: flex-start; }
+
+  /* CTA */
+  .ctaSec { height: auto; min-height: 380px; padding: 4rem 1.25rem; }
+  .ctaH { font-size: clamp(2rem, 8vw, 3.5rem); }
+
+  /* FOOTER */
+  .footer { padding: 2rem 1.25rem; }
+  .footTop { grid-template-columns: 1fr; gap: 2rem; }
+  .footBottom { flex-direction: column; align-items: flex-start; gap: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .heroH1 { font-size: clamp(1.9rem, 9vw, 2.8rem); }
+  .statStrip { grid-template-columns: 1fr 1fr; }
+  .statNum { font-size: 1.5rem; }
+  .metRight { grid-template-columns: 1fr; }
+  .metCell:nth-child(2n) { border-right: none; }
+  .metCell:nth-child(3) { border-bottom: 1px solid var(--line); }
+}
