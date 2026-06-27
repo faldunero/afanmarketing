@@ -34,9 +34,10 @@ export default function Home() {
         <video
           className={styles.heroVideo}
           autoPlay muted loop playsInline
-          poster="https://images.pexels.com/videos/2851693/pictures/preview-0.jpg"
+          poster="https://images.pexels.com/videos/1409899/pictures/preview-0.jpg"
         >
-          <source src="https://videos.pexels.com/video-files/2851693/2851693-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+          {/* Vista aérea ciudad de noche — sin personas — similar al video nosotros */}
+          <source src="https://videos.pexels.com/video-files/1409899/1409899-uhd_2560_1440_25fps.mp4" type="video/mp4" />
         </video>
         <div className={styles.heroOverlay} />
         <div className={styles.heroOverlayLeft} />
