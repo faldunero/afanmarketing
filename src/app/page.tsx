@@ -28,15 +28,15 @@ export default function Home() {
         </nav>
       </nav>
 
-      {/* ── HERO — video de fondo ── */}
+      {/* ── HERO — ciudad de noche aérea, sin personas ── */}
       <section className={styles.hero}>
         <div className={styles.heroFallback} />
         <video
           className={styles.heroVideo}
           autoPlay muted loop playsInline
-          poster="https://images.pexels.com/videos/3129671/pictures/preview-0.jpg"
+          poster="https://images.pexels.com/videos/2851693/pictures/preview-0.jpg"
         >
-          <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/2851693/2851693-uhd_2560_1440_30fps.mp4" type="video/mp4" />
         </video>
         <div className={styles.heroOverlay} />
         <div className={styles.heroOverlayLeft} />
@@ -86,7 +86,7 @@ export default function Home() {
       {/* ── IMAGE TICKER ── */}
       <ImageTicker />
 
-      {/* ── INDUSTRIAS ── */}
+      {/* ── INDUSTRIAS — foto abstracta tecnología, sin personas ── */}
       <section className={styles.industrias} id="nosotros">
         <div className={styles.indGrid}>
           <div>
@@ -107,9 +107,10 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.indImgWrap}>
+            {/* Dashboard analytics sin personas */}
             <img
-              src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-              alt="Equipo de trabajo en reunión estratégica"
+              src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+              alt="Dashboard de marketing digital y analítica"
               className={styles.indImg}
               loading="lazy"
             />
@@ -157,7 +158,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CASOS con fotos reales ── */}
+      {/* ── CASOS — fotos sin personas: autos, edificios, pantallas ── */}
       <section className={styles.secPaper} id="casos">
         <div className={styles.si} style={{ paddingBottom: '2rem' }}>
           <div className={styles.eyebrowD}>Casos de éxito</div>
@@ -171,22 +172,25 @@ export default function Home() {
               result: '−60%', kpi: 'Reducción de CPA',
               q: 'Magdalena implementó automatización, liberó tiempo de su equipo y mejoró el cierre de negocios en un 250%.',
               av: 'MM', name: 'Magdalena Madariaga', co: 'Jefa de Marketing · Servimaq',
-              img: 'https://images.pexels.com/photos/1181622/pexels-photo-1181622.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-              alt: 'Servimaq equipo',
+              /* sala de autos en showroom, sin personas */
+              img: 'https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
+              alt: 'Showroom automotriz',
             },
             {
               result: '+114%', kpi: 'Tasa de conversión',
               q: 'Soledad redujo el costo por conversión en un 55% identificando oportunidades clave en el flujo de ventas.',
               av: 'SD', name: "Soledad Dell'Oro", co: 'Gerente Comercial · Piamonte',
-              img: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-              alt: 'Piamonte Automotriz',
+              /* edificio moderno / inmueble */
+              img: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
+              alt: 'Edificio corporativo moderno',
             },
             {
               result: '+87%', kpi: 'Tasa de conversión',
               q: 'David contó con branding, estrategia digital, CRM y producción para escalar su plataforma líder en activos alternativos.',
               av: 'DG', name: 'David Guzmán', co: 'CEO · Xcala',
-              img: 'https://images.pexels.com/photos/3182781/pexels-photo-3182781.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-              alt: 'Xcala plataforma',
+              /* pantalla con gráfico de crecimiento / fintech */
+              img: 'https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
+              alt: 'Gráfico de crecimiento financiero',
             },
           ].map((c) => (
             <div className={styles.caseCard} key={c.av}>
@@ -276,10 +280,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── NOSOTROS — video de fondo ── */}
+      {/* ── NOSOTROS — video ciudad de noche sin personas ── */}
       <section className={styles.teamSec}>
         <video className={styles.teamVideo} autoPlay muted loop playsInline>
-          <source src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/5838634/5838634-uhd_2560_1440_30fps.mp4" type="video/mp4" />
         </video>
         <div className={styles.teamOverlay} />
         <div className={styles.teamContent}>
@@ -323,10 +327,10 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ── CTA — video de fondo ── */}
+      {/* ── CTA — video city lights bokeh, sin personas ── */}
       <section className={styles.ctaSec} id="contacto">
         <video className={styles.ctaVideo} autoPlay muted loop playsInline>
-          <source src="https://videos.pexels.com/video-files/3195440/3195440-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/10992365/10992365-uhd_2560_1440_30fps.mp4" type="video/mp4" />
         </video>
         <div className={styles.ctaOverlay} />
         <div className={styles.ctaGlow} />
