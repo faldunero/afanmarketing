@@ -28,42 +28,54 @@ export default function Home() {
         </nav>
       </nav>
 
-      {/* ── HERO ── */}
+      {/* ── HERO — video de fondo ── */}
       <section className={styles.hero}>
-        <div className={styles.heroEyebrow}>
-          <span className={styles.eyebrowDot} />
-          Agencia de Marketing · Google Partner · Chile · Desde 2019
-        </div>
-        <h1 className={styles.heroH1}>
-          Mejora los resultados<br />
-          de tu negocio.<br />
-          <em>Aumenta tus ventas.</em>
-        </h1>
-        <div className={styles.heroBottom}>
-          <p className={styles.heroSub}>
-            Optimizamos tus procesos comerciales y de marketing para atraer prospectos
-            calificados, automatizar flujos y cerrar más negocios con experiencia corporativa real.
-          </p>
-          <div className={styles.heroCtas}>
-            <a href="#casos" className="btn-ghost-dark">
-              Ver casos de éxito →
-            </a>
-            <a href="#contacto" className="btn-primary">
-              Agendar sesión gratuita
-            </a>
+        <div className={styles.heroFallback} />
+        <video
+          className={styles.heroVideo}
+          autoPlay muted loop playsInline
+          poster="https://images.pexels.com/videos/3173280/pictures/preview-0.jpg"
+        >
+          <source src="https://videos.pexels.com/video-files/3173280/3173280-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+        </video>
+        <div className={styles.heroOverlay} />
+        <div className={styles.heroOverlayLeft} />
+        <div className={styles.heroContent}>
+          <div className={styles.heroTag}>
+            <span className={styles.heroDot} />
+            Agencia de Marketing · Google Partner · Chile · Desde 2019
           </div>
+          <h1 className={styles.heroH1}>
+            Mejora los resultados<br />
+            de tu negocio.<br />
+            <em>Aumenta tus ventas.</em>
+          </h1>
+          <div className={styles.heroBottom}>
+            <p className={styles.heroSub}>
+              Optimizamos tus procesos comerciales y de marketing para atraer prospectos
+              calificados, automatizar flujos y cerrar más negocios con experiencia corporativa real.
+            </p>
+            <div className={styles.heroCtas}>
+              <a href="#casos" className="btn-ghost-dark">Ver casos de éxito →</a>
+              <a href="#contacto" className="btn-primary">Agendar sesión gratuita</a>
+            </div>
+          </div>
+        </div>
+        <div className={styles.scrollHint}>
+          <div className={styles.scrollLine} />
+          Scroll
         </div>
       </section>
 
-      {/* ── STAT TICKER ── */}
-      <div className={styles.statTicker}>
+      {/* ── STAT STRIP ── */}
+      <div className={styles.statStrip}>
         {[
           { num: '+3.5K', label: 'Anuncios gestionados', sub: 'Google Ads · Meta Ads' },
           { num: '+250K', label: 'Prospectos generados', sub: 'Lead nurturing incluido' },
           { num: 'USD 1M', label: 'Inversión en medios', sub: 'Google Ads · Redes Sociales' },
           { num: '−60%', label: 'Reducción CPA promedio', sub: 'En clientes activos' },
-        ].map((s, i) => (
-          <div className={styles.statItem} key={i}>
+        ].map((s) => (
+          <div className={styles.statItem} key={s.label}>
             <div className={styles.statNum}>{s.num}</div>
             <div className={styles.statLabel}>{s.label}</div>
             <div className={styles.statSub}>{s.sub}</div>
@@ -76,28 +88,34 @@ export default function Home() {
 
       {/* ── INDUSTRIAS ── */}
       <section className={styles.industrias} id="nosotros">
-        <div className={styles.indInner}>
+        <div className={styles.indGrid}>
           <div>
             <div className={styles.eyebrowW}>Especialización</div>
             <h2 className={styles.shW}>
               Expertos en ventas<br />
               <strong>complejas y de alto<br />involucramiento</strong>
             </h2>
-            <p className={styles.ssubW}>
+            <p className={styles.subW}>
               Sabemos cómo mejorar tus resultados porque venimos del mundo de los negocios.
               Desarrollamos nuestras carreras en cargos de alta responsabilidad en diferentes
               industrias y también como fundadores de empresas.
-            </p>
-          </div>
-          <div>
-            <p className={styles.ssubW} style={{ marginBottom: '1.5rem' }}>
-              Trabajamos con empresas que necesitan atraer prospectos calificados y gestionar
-              oportunidades a través de una fuerza de ventas:
             </p>
             <div className={styles.indTags}>
               {['Automotriz', 'Fintech', 'Inmobiliaria', 'Textil y moda', 'Agronegocios', 'Otras B2C y B2B'].map((t) => (
                 <span className={styles.indTag} key={t}>{t}</span>
               ))}
+            </div>
+          </div>
+          <div className={styles.indImgWrap}>
+            <img
+              src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+              alt="Equipo de trabajo en reunión estratégica"
+              className={styles.indImg}
+              loading="lazy"
+            />
+            <div className={styles.indStat}>
+              <div className={styles.indStatNum}>+5 años</div>
+              <div className={styles.indStatLbl}>Experiencia corporativa real</div>
             </div>
           </div>
         </div>
@@ -113,7 +131,7 @@ export default function Home() {
                 Nuestro sistema de<br /><strong>optimización comercial</strong>
               </h2>
             </div>
-            <p className={styles.ssubD}>
+            <p className={styles.subD}>
               Si tu empresa necesita atraer prospectos calificados y gestionar oportunidades a
               través de una fuerza de ventas, nuestro sistema te permitirá cumplir tus metas
               comerciales y mejorar los resultados de tu negocio.
@@ -121,7 +139,7 @@ export default function Home() {
           </div>
           <div className={styles.solList}>
             {[
-              { n: '01', title: 'Google Ads y optimización web', desc: 'La gestión de más de 3.500 anuncios nos ha dado la experiencia y conocimiento para optimizar campañas digitales. Landing pages con foco total en conversión real y medible.', badge: 'SEM / Web' },
+              { n: '01', title: 'Google Ads y optimización web', desc: 'La gestión de más de 3.500 anuncios nos ha dado la experiencia y el conocimiento para optimizar campañas digitales. Landing pages con foco total en conversión real y medible.', badge: 'SEM / Web' },
               { n: '02', title: 'Redes sociales y anuncios digitales', desc: 'Estrategia de contenido y pauta en Meta e Instagram orientada a captación de leads calificados para tu industria específica.', badge: 'Social Media' },
               { n: '03', title: 'CRM y automatización comercial', desc: 'Más de 250.000 prospectos generados con acciones de lead nurturing para automatizar y optimizar el cierre de ventas. Medición de indicadores en tiempo real.', badge: 'Automatización' },
               { n: '04', title: 'Prospección y ventas B2B', desc: 'Identificación de oportunidades de alto valor, eficiencia en flujos de ventas y mejora continua de la experiencia del usuario en cada punto del embudo comercial.', badge: 'B2B Sales' },
@@ -139,18 +157,70 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── CASOS con fotos reales ── */}
+      <section className={styles.secPaper} id="casos">
+        <div className={styles.si} style={{ paddingBottom: '2rem' }}>
+          <div className={styles.eyebrowD}>Casos de éxito</div>
+          <h2 className={styles.shD}>
+            Aceleramos el crecimiento<br /><strong>de nuestros clientes</strong>
+          </h2>
+        </div>
+        <div className={styles.casesGrid}>
+          {[
+            {
+              result: '−60%', kpi: 'Reducción de CPA',
+              q: 'Magdalena implementó automatización, liberó tiempo de su equipo y mejoró el cierre de negocios en un 250%.',
+              av: 'MM', name: 'Magdalena Madariaga', co: 'Jefa de Marketing · Servimaq',
+              img: 'https://images.pexels.com/photos/1181622/pexels-photo-1181622.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+              alt: 'Servimaq equipo',
+            },
+            {
+              result: '+114%', kpi: 'Tasa de conversión',
+              q: 'Soledad redujo el costo por conversión en un 55% identificando oportunidades clave en el flujo de ventas.',
+              av: 'SD', name: "Soledad Dell'Oro", co: 'Gerente Comercial · Piamonte',
+              img: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+              alt: 'Piamonte Automotriz',
+            },
+            {
+              result: '+87%', kpi: 'Tasa de conversión',
+              q: 'David contó con branding, estrategia digital, CRM y producción para escalar su plataforma líder en activos alternativos.',
+              av: 'DG', name: 'David Guzmán', co: 'CEO · Xcala',
+              img: 'https://images.pexels.com/photos/3182781/pexels-photo-3182781.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+              alt: 'Xcala plataforma',
+            },
+          ].map((c) => (
+            <div className={styles.caseCard} key={c.av}>
+              <img src={c.img} alt={c.alt} className={styles.caseImg} loading="lazy" />
+              <div className={styles.caseCardOverlay} />
+              <div className={styles.caseBody}>
+                <div className={styles.caseResult}>{c.result}</div>
+                <div className={styles.caseKpi}>{c.kpi}</div>
+                <blockquote className={styles.caseQ}>{c.q}</blockquote>
+                <div className={styles.caseWho}>
+                  <div className={styles.caseAv}>{c.av}</div>
+                  <div>
+                    <div className={styles.caseName}>{c.name}</div>
+                    <div className={styles.caseCo}>{c.co}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ── MÉTRICAS ── */}
-      <section className={styles.secPaper}>
+      <section className={styles.secWhite}>
         <div className={styles.metWrap}>
           <div className={styles.metLeft}>
             <div className={styles.eyebrowD}>Trayectoria</div>
             <h2 className={styles.shDSm}>
               Nuestra experiencia<br /><strong>nos diferencia</strong>
             </h2>
-            <p className={styles.ssubD} style={{ marginTop: '0.75rem' }}>
+            <p className={styles.subD} style={{ marginTop: '0.75rem' }}>
               Desde el 2019 ayudamos a empresas a optimizar sus flujos comerciales y de marketing
-              para convertir sus embudos de venta en generadores de prospectos. Automatizamos
-              procesos comerciales para incrementar resultados y acelerar el crecimiento.
+              para convertir sus embudos de venta en generadores de prospectos y captadores de
+              nuevos clientes. Automatizamos procesos para incrementar resultados y acelerar el crecimiento.
             </p>
             <a href="#contacto" className={`btn-primary ${styles.metBtn}`}>
               Conocer el sistema →
@@ -159,9 +229,9 @@ export default function Home() {
           <div className={styles.metRight}>
             {[
               { num: '+3.5K', label: 'Anuncios gestionados', desc: 'La gestión de más de 3.500 anuncios en Google y Meta nos da experiencia para optimizar campañas digitales', w: 70 },
-              { num: '250K', label: 'Prospectos generados', desc: 'Más de 250.000 leads generados con acciones de nurturing para automatizar el cierre de ventas', w: 85 },
-              { num: 'USD 1M', label: 'Inversión en medios', desc: 'Planificamos y administramos inversión en medios digitales como Google Ads y Redes Sociales por más de USD 1.000.000', w: 92 },
-              { num: '114%', label: 'Aumento de conversión', desc: 'Promedio de mejora en tasa de conversión en clientes que implementaron el sistema completo', w: 57 },
+              { num: '250K', label: 'Prospectos generados', desc: 'Más de 250.000 leads con acciones de nurturing para automatizar el cierre de ventas', w: 85 },
+              { num: 'USD 1M', label: 'Inversión en medios', desc: 'Planificamos y administramos inversión en Google Ads y Redes Sociales por más de USD 1.000.000', w: 92 },
+              { num: '114%', label: 'Aumento de conversión', desc: 'Promedio de mejora en tasa de conversión con el sistema completo de optimización comercial', w: 57 },
             ].map((m) => (
               <div className={styles.metCell} key={m.label}>
                 <div className={styles.metNum}>{m.num}</div>
@@ -176,38 +246,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CASOS ── */}
-      <section className={styles.secWhite} id="casos">
-        <div className={styles.si}>
-          <div className={styles.eyebrowD}>Casos de éxito</div>
-          <h2 className={styles.shD}>
-            Aceleramos el crecimiento<br /><strong>de nuestros clientes</strong>
-          </h2>
-        </div>
-        <div className={styles.casesRow}>
-          {[
-            { result: '−60%', kpi: 'Reducción de CPA', q: 'Magdalena implementó herramientas de automatización, liberó tiempo de su equipo y mejoró la tasa de cierre de negocios en un 250%.', av: 'MM', name: 'Magdalena Madariaga', co: 'Jefa de Marketing · Servimaq' },
-            { result: '+114%', kpi: 'Tasa de conversión', q: 'Soledad redujo el costo por conversión en un 55% gracias a que identificamos y priorizamos oportunidades de mejora en su flujo de ventas.', av: 'SD', name: 'Soledad Dell\'Oro', co: 'Gerente Comercial · Piamonte' },
-            { result: '+87%', kpi: 'Tasa de conversión', q: 'David contó con un equipo especialista en branding, estrategia digital, CRM y producción para escalar su plataforma de inversión en activos alternativos.', av: 'DG', name: 'David Guzmán', co: 'CEO · Xcala' },
-          ].map((c) => (
-            <div className={styles.caseCard} key={c.av}>
-              <div>
-                <div className={styles.caseResult}>{c.result}</div>
-                <div className={styles.caseKpi}>{c.kpi}</div>
-              </div>
-              <blockquote className={styles.caseQ}>{c.q}</blockquote>
-              <div className={styles.caseWho}>
-                <div className={styles.caseAv}>{c.av}</div>
-                <div>
-                  <div className={styles.caseName}>{c.name}</div>
-                  <div className={styles.caseCo}>{c.co}</div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* ── PROCESO ── */}
       <section className={styles.secPaper}>
         <div className={styles.si}>
@@ -216,7 +254,7 @@ export default function Home() {
               <div className={styles.eyebrowD}>Sistema</div>
               <h2 className={styles.shD}>Cómo<br /><strong>trabajamos</strong></h2>
             </div>
-            <p className={styles.ssubD}>
+            <p className={styles.subD}>
               Automatizamos procesos comerciales para incrementar resultados, mejorar la experiencia
               de usuarios y aumentar la eficiencia en los flujos de ventas.
             </p>
@@ -238,15 +276,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── NOSOTROS — video de fondo ── */}
+      <section className={styles.teamSec}>
+        <video className={styles.teamVideo} autoPlay muted loop playsInline>
+          <source src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+        </video>
+        <div className={styles.teamOverlay} />
+        <div className={styles.teamContent}>
+          <div className={styles.teamEyebrow}>Nosotros</div>
+          <h2 className={styles.teamH}>
+            Experiencia<br />corporativa <em>real</em>
+          </h2>
+          <p className={styles.teamP}>
+            Somos un equipo de profesionales expertos en el desarrollo y gestión de negocios.
+            Lideramos cada proyecto con foco en la eficiencia y la rentabilidad. Entendemos los
+            desafíos que enfrenta una empresa para cumplir sus metas comerciales.
+          </p>
+          <a href="#contacto" className="btn-primary">Agendar sesión gratuita →</a>
+        </div>
+      </section>
+
       {/* ── GOOGLE PARTNER ── */}
       <div className={styles.gpBand}>
         <div>
           <h3 className={styles.gpTitle}>Somos Google Partner</h3>
           <p className={styles.gpDesc}>
             Nuestra trayectoria y resultados nos han hecho merecedores de esta certificación oficial
-            de Google. Hemos mantenido un nivel de optimización que indica rendimientos
-            sobresalientes en las cuentas de nuestros clientes y la capacidad de identificar nuevas
-            oportunidades de crecimiento de manera continua.
+            de Google. Hemos mantenido un nivel de optimización que indica rendimientos sobresalientes
+            en las cuentas de nuestros clientes y la capacidad de identificar nuevas oportunidades de
+            crecimiento de manera continua.
           </p>
         </div>
         <div className={styles.gpBadge}>
@@ -260,21 +318,28 @@ export default function Home() {
           </div>
           <div>
             <div className={styles.gpCert}>Partner Certificado</div>
-            <div className={styles.gpTxt}>Rendimiento sobresaliente<br />en cuentas de clientes</div>
+            <div className={styles.gpSub}>Rendimiento sobresaliente<br />en cuentas de clientes</div>
           </div>
         </div>
       </div>
 
-      {/* ── CTA ── */}
+      {/* ── CTA — video de fondo ── */}
       <section className={styles.ctaSec} id="contacto">
-        <div className={styles.ctaLine} />
-        <h2 className={styles.ctaH}>
-          Queremos <em>acelerar</em><br />el crecimiento de<br />tu negocio.
-        </h2>
-        <p className={styles.ctaSub}>Agenda una sesión de diagnóstico sin costo. Sin compromisos.</p>
-        <a href="mailto:contacto@afanmarketing.com" className="btn-primary" style={{ fontSize: '0.88rem', padding: '0.9rem 2.25rem' }}>
-          Agendar sesión gratuita →
-        </a>
+        <video className={styles.ctaVideo} autoPlay muted loop playsInline>
+          <source src="https://videos.pexels.com/video-files/3195440/3195440-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+        </video>
+        <div className={styles.ctaOverlay} />
+        <div className={styles.ctaGlow} />
+        <div className={styles.ctaContent}>
+          <div className={styles.ctaLine} />
+          <h2 className={styles.ctaH}>
+            Queremos <em>acelerar</em><br />el crecimiento de<br />tu negocio.
+          </h2>
+          <p className={styles.ctaSub}>Agenda una sesión de diagnóstico sin costo. Sin compromisos.</p>
+          <a href="mailto:contacto@afanmarketing.com" className="btn-primary" style={{ fontSize: '0.9rem', padding: '0.9rem 2.25rem' }}>
+            Agendar sesión gratuita →
+          </a>
+        </div>
       </section>
 
       {/* ── FOOTER ── */}
@@ -285,8 +350,7 @@ export default function Home() {
             <p>
               Afan Marketing Digital SpA es responsable del tratamiento de sus datos personales.
               Los datos recopilados se usan exclusivamente para responder consultas, enviar
-              información con su consentimiento y mejorar nuestros servicios. No compartimos sus
-              datos con terceros sin autorización expresa.
+              información con su consentimiento y mejorar nuestros servicios.
             </p>
             <p style={{ marginTop: '0.5rem' }}>
               DPO: <a href="mailto:datos@afanmarketing.com">datos@afanmarketing.com</a>
